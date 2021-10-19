@@ -1,0 +1,50 @@
+<form>
+  <div>
+    <div class="form-group">
+      
+        <label for="firstNameInput">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstNameInput"
+          aria-describedby="firstNameHelp"
+          placeholder="Enter first name"
+          [(ngModel)]="firstName"
+          [ngModelOptions]="{standalone: true}"
+        />
+    </div>
+
+    <div class="form-group">
+      <label for="lastNameInput">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastNameInput"
+        aria-describedby="lastNameHelp"
+        placeholder="Enter last name"
+        [(ngModel)]="lastName"
+        [ngModelOptions]="{standalone: true}"
+      />
+    </div>
+  </div>
+
+  <div>
+    <div class="form-group">
+      <label for="addressInput">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        id="addressInput"
+        aria-describedby="addressHelp"
+        placeholder="Enter address"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="stateSelect">State</label>
+      <select class="form-control" id="stateSelect" name="states">
+        <option *ngFor="let state of states">{{state}}</option>
+      </select>
+    </div>
+  </div>
+</form>
