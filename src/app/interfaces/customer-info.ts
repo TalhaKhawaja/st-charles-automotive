@@ -2,12 +2,12 @@ import { CustomerVehicleInfo } from "./customer-vehicle-info";
 
 export interface CustomerInfo {
     id?: number;
-    firstName?: string | undefined;
-    lastName?: string | undefined;
-    address?: string | undefined;
-    zipcode?: number | undefined;
-    city?: string;
-    state?: string | undefined;
-    phoneNumber?: string | undefined;
-    vehicleInfo?: CustomerVehicleInfo;
+    firstName: string;
+    lastName: string;
+    address: string;
+    zipcode: number;
+    city: string;
+    state: string;
+    phoneNumber: string;
+    vehicleInfo: CustomerVehicleInfo;
 }

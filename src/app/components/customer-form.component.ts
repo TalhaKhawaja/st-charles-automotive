@@ -10,19 +10,15 @@ import { CUSTOMERINFO } from '../mock-data';
 export class CustomerFormComponent {
 
   @Output() newReservationInfo = new EventEmitter<CustomerInfo>();
-  firstName: string = '';
-  lastName: string = '';
 
-  states = STATES;
-  customers: CustomerInfo[] = CUSTOMERINFO;
+
   constructor() {}
 
-  getReservationInfo(customer: CustomerInfo): void {
-    customer.firstName = this.firstName;
-    customer.lastName = this.lastName;
+  // sendCustomerInfo(customer: CustomerInfo): void {
+  //   customer.firstName = this.firstName;
+  //   customer.lastName = this.lastName;
 
-    this.newReservationInfo.emit(customer);
-
-    console.log(`${customer.firstName} ${customer.lastName}`);
-  }
+  //   this.newReservationInfo.emit(customer);
+  //   console.log('form called');
+  // }
 }

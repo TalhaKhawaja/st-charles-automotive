@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CustomerInfo } from './interfaces/customer-info';
+import { CUSTOMERINFO } from './mock-data';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,13 @@ import { Component } from '@angular/core';
 
 
 export class AppComponent {
+  customers: CustomerInfo[] = CUSTOMERINFO;
   
+  constructor() {}
+
+  addCustomer(customer: CustomerInfo): void {
+    this.customers.push(customer);
+
+    console.log(`test: ${customer}`)
+  }
 }

@@ -15,7 +15,7 @@ export const CUSTOMERINFO: CustomerInfo[] = [
       model: 'Accord',
       year: '2016',
       color: 'Grey',
-    },
+    }
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ export const CUSTOMERINFO: CustomerInfo[] = [
       model: 'Pilot',
       year: '2010',
       color: 'Silver',
-    },
+    }
   },
   {
     id: 3,
@@ -47,6 +47,6 @@ export const CUSTOMERINFO: CustomerInfo[] = [
       model: 'Eqinox',
       year: '2019',
       color: 'Silver',
-    },
-  },
+    }
+  }
 ];
