@@ -10,11 +10,13 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
+import bootstrapPlugin from '@fullcalendar/bootstrap';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import { CalendarComponent } from './components/calendar.component';
 import { FormsModule } from '@angular/forms';
 
 FullCalendarModule.registerPlugins([
+  bootstrapPlugin,
   dayGridPlugin,
   interactionPlugin,
   listPlugin,

@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { CalendarApi, CalendarOptions, EventInput, EventSourceInput } from '@fullcalendar/angular';
+import {
+  CalendarApi,
+  CalendarOptions,
+  EventInput,
+  EventSourceInput,
+} from '@fullcalendar/angular';
 import { CustomerInfo } from '../interfaces/customer-info';
 import { CustomerInfoService } from '../services/customer.service';
-
 @Component({
   selector: 'app-calendar',
   templateUrl: '../templates/calendar.template.html',
@@ -13,12 +17,19 @@ export class CalendarComponent implements OnInit {
   events: EventSourceInput = {};
 
   calendarOptions: CalendarOptions = {
+    themeSystem: 'bootstrap',
     initialView: 'timeGridWeek',
     selectable: true,
     dateClick: this.handleDateClick.bind(this),
     events: [],
     navLinks: true,
     eventClick: (eventInfo) => this.handleEventClick(eventInfo),
+    titleFormat: { year: 'numeric', month: 'long' },
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay',
+    },
   };
 
   constructor(private customerInfoService: CustomerInfoService) {
@@ -26,16 +37,17 @@ export class CalendarComponent implements OnInit {
       this.customers = cust;
     });
 
-    
-    this.events = [{
-      id: '101',
-      title: 'Talha Khawaja',
-      //date: `${date} ${arg.dateStr.split('T')[1]}`,
-      allDay: false,
-      editable: false,
-      interactive: true,
-      overlap: false,
-    }];
+    this.events = [
+      {
+        id: '101',
+        title: 'Talha Khawaja',
+        //date: `${date} ${arg.dateStr.split('T')[1]}`,
+        allDay: false,
+        editable: false,
+        interactive: true,
+        overlap: false,
+      },
+    ];
   }
 
   ngOnInit(): void {}
