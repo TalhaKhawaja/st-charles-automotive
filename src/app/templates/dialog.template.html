@@ -50,19 +50,123 @@
               id="addressInput"
               aria-describedby="addressHelp"
               placeholder="Enter address"
+              [(ngModel)]="address"
+              [ngModelOptions]="{standalone: true}"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="cityInput">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              id="cityInput"
+              aria-describedby="cityHelp"
+              placeholder="Enter city"
+              [(ngModel)]="city"
+              [ngModelOptions]="{standalone: true}"
             />
           </div>
 
           <div class="form-group">
             <label for="stateSelect">State</label>
-            <select class="form-control" id="stateSelect" name="states">
-              <option *ngFor="let state of states">{{state}}</option>
+            <select
+              class="form-control"
+              id="stateSelect"
+              name="states"
+              [(ngModel)]="selectedState"
+              #state
+              (ngModelChange)="onStatesSelected($event)"
+            >
+              <option [ngValue]="null" [disabled]="true">Select a state</option>
+              <option *ngFor="let state of states" [ngValue]="state">
+                {{state.name}}
+              </option>
             </select>
+          </div>
+
+          <div class="form-group">
+            <label for="zipcodeInput">ZipCode</label>
+            <input
+              type="text"
+              class="form-control"
+              id="zipcodeInput"
+              aria-describedby="zipcodeHelp"
+              placeholder="Enter zipcode"
+              [(ngModel)]="zipcode"
+              [ngModelOptions]="{standalone: true}"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phoneNumberInput">Phone Number</label>
+            <input
+              type="text"
+              class="form-control"
+              id="phoneNumberInput"
+              aria-describedby="phoneNumberHelp"
+              placeholder="Enter phone number"
+              [(ngModel)]="phoneNumber"
+              [ngModelOptions]="{standalone: true}"
+            />
+          </div>
+
+          <!-- Vehicle Information -->
+          <div class="form-group">
+            <label for="vehicleBrandInput">Vehicle Brand</label>
+            <input
+              type="text"
+              class="form-control"
+              id="vehicleBrandInput"
+              aria-describedby="vehicleBrandHelp"
+              placeholder="Enter vehicle brand"
+              [(ngModel)]="vehicleInfo.brand"
+              [ngModelOptions]="{standalone: true}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="vehicleModelInput">Vehicle Model</label>
+            <input
+              type="text"
+              class="form-control"
+              id="vehicleModelInput"
+              aria-describedby="vehicleModelHelp"
+              placeholder="Enter vehicle model"
+              [(ngModel)]="vehicleInfo.model"
+              [ngModelOptions]="{standalone: true}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="vehicleColorInput">Vehicle Color</label>
+            <input
+              type="text"
+              class="form-control"
+              id="vehicleColorInput"
+              aria-describedby="vehicleColorHelp"
+              placeholder="Enter vehicle color"
+              [(ngModel)]="vehicleInfo.color"
+              [ngModelOptions]="{standalone: true}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="vehicleYearInput">Vehicle Year</label>
+            <input
+              type="text"
+              class="form-control"
+              id="vehicleYearInput"
+              aria-describedby="vehicleYearHelp"
+              placeholder="Enter vehicle year"
+              [(ngModel)]="vehicleInfo.year"
+              [ngModelOptions]="{standalone: true}"
+            />
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-light" (click)="onSubmit()">
+        <button type="button" class="btn btn-light" (click)="modal.close()">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-primary" (click)="onSubmit()">
           Add
         </button>
       </div>
@@ -74,6 +178,20 @@
     class="btn btn-outline-primary mb-2 mr-2"
     (click)="openDialog(content)"
   >
-    Add Reservation
+  <!-- Plus bootstrap icon, not sure eventually should be a icon component -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      class="bi bi-plus-lg"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+      />
+    </svg>
+    Add
   </button>
 </section>

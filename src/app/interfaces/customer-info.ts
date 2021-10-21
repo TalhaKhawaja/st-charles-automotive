@@ -5,7 +5,7 @@ export interface CustomerInfo {
     firstName: string;
     lastName: string;
     address: string;
-    zipcode: number;
+    zipcode: number | undefined;
     city: string;
     state: string;
     phoneNumber: string;

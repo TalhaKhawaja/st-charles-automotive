@@ -48,5 +48,15 @@
         "color": "Silver"
       }
     }
+  ],
+  "reservations": [
+    {
+      "id": 1,
+      "customerInfoId": "1",
+      "title": "Talha Khawaja",
+      "date": "2021-10-22",
+      "allDay": false,
+      "interactive": true
+    }
   ]
 }
